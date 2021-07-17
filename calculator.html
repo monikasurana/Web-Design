@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Form</title>
+    </head>
+    <script>
+        function abc()
+        {
+            // console.log("Working");
+            // alert("Working");
+
+            var fno = document.getElementById('fno').value;
+
+            var sno = document.getElementById('sno').value;
+
+            var oper = document.getElementById('oper').value;
+
+            // alert(fno+" "+sno+" "+oper);
+
+            if(oper=="Add")
+            {
+                var res =  parseInt(fno)+parseInt(sno);
+                // alert(res);
+
+                 document.getElementById('res').value=res;
+            }
+
+            if(oper=="Sub")
+            {
+                var res =  parseInt(fno)-parseInt(sno);
+
+                document.getElementById('res').value=res;
+            }
+
+            if(oper=="Mul")
+            {
+                var res =  parseInt(fno)*parseInt(sno);
+
+                document.getElementById('res').value=res;
+            }
+
+            if(oper=="Div")
+            {
+                var res =  parseInt(fno)/parseInt(sno);
+
+                document.getElementById('res').value=res;
+            }
+
+
+            return false;
+        }
+    </script>
+    <body>
+    <form action ="" onsubmit="return abc();">
+        <table>
+            <tr>
+                <td>First No.</td>
+                <td><input type="text" id="fno" placeholder="Enter First Number"></td>
+            </tr>
+
+            <tr>
+                <td>Second No.</td>
+                <td><input type="text" id="sno" placeholder="Enter Second Number"></td>
+            </tr>
+
+            <tr>
+                <td>Operation</td>
+                <td> 
+                    <select id= "oper" onchange="return abc()">
+                        <option value=" ">Select Any opition</option>
+                        <option value="Add">Add</option>
+                        <option value="Sub">Sub</option>
+                        <option value="Mul">Mul</option>
+                        <option value="Div">Div</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" id="res" readonly> </td>
+            </tr>
+
+            <!-- <tr>
+                <td><input type="Submit" value="Click Here..."></td>
+            </tr> -->
+
+        </table>
+    </form>
+</body>
+</html>
